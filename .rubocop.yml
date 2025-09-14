@@ -1,0 +1,21 @@
+# .rubocop.yml
+inherit_gem:
+  rubocop-rails-omakase: rubocop.yml
+
+# シングルクォートスタイルに変更
+Style/StringLiterals:
+  EnforcedStyle: single_quotes
+
+Style/StringLiteralsInInterpolation:
+  EnforcedStyle: single_quotes
+
+# その他の便利な設定
+Layout/LineLength:
+  Max: 120
+
+Style/Documentation:
+  Enabled: false
+
+# frozen_string_literal コメントを必須にしない
+Style/FrozenStringLiteralComment:
+  Enabled: false
