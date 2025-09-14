@@ -16,6 +16,12 @@ module App
     # Common ones are `templates`, `generators`, or `middleware`, for example.
     config.autoload_lib(ignore: %w[assets tasks])
 
+    config.i18n.default_locale = :ja
+
+    # config time_zone
+    config.time_zone = 'Asia/Tokyo'
+
+
     # Configuration for the application, engines, and railties goes here.
     #
     # These settings can be overridden in specific environments using the files
@@ -23,5 +29,10 @@ module App
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+
+    # test関連のファイルの自動生成抑制
+    config.generators do |g|
+      g.test_framework
+    end
   end
 end
