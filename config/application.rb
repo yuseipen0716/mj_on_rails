@@ -23,5 +23,10 @@ module App
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+
+    # test関連のファイルの自動生成抑制
+    config.generators do |g|
+      g.test_framework
+    end
   end
 end
