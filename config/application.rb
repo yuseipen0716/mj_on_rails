@@ -31,8 +31,8 @@ module App
     # config.eager_load_paths << Rails.root.join("extras")
 
     # test関連のファイルの自動生成抑制
-    config.generators do |g|
-      g.test_framework
-    end
+    # config.generators do |g|
+    #   g.test_framework :rspec
+    # end
   end
 end
