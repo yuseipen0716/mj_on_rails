@@ -2,7 +2,7 @@ class CreateDoraIndicators < ActiveRecord::Migration[8.0]
   def change
     create_table :dora_indicators do |t|
       t.references :game, null: false, foreign_key: true
-      t.references :player, null: false, foreign_key: true, comment: 'カンを行ったプレイヤー（初期ドラの場合はnull）'
+      t.references :player, null: true, foreign_key: true, comment: 'カンを行ったプレイヤー（初期ドラの場合はnull）'
       t.string :tile, null: false, limit: 10, comment: 'ドラ表示牌（例: "3m", "west", "white"）'
       t.integer :position, null: false, comment: 'ドラの位置（0:最初のドラ, 1:1つ目のカンドラ, 2:2つ目のカンドラ, 3:3つ目のカンドラ）'
       t.integer :source, null: false, default: 0, comment: 'ドラの出現元（例: 0:initial, 1:minkan, 2:ankan, 3:kakan）'

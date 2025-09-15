@@ -13,7 +13,7 @@
 ActiveRecord::Schema[8.0].define(version: 2025_09_14_201948) do
   create_table "dora_indicators", force: :cascade do |t|
     t.integer "game_id", null: false
-    t.integer "player_id", null: false
+    t.integer "player_id"
     t.string "tile", limit: 10, null: false
     t.integer "position", null: false
     t.integer "source", default: 0, null: false
