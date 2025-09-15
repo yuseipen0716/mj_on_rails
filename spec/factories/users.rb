@@ -17,8 +17,35 @@
 #
 FactoryBot.define do
   factory :user do
-    name { "MyString" }
-    email { "MyString" }
-    password_digest { "MyString" }
+    sequence(:name) { |n| "プレイヤー#{n}" }
+    sequence(:email) { |n| "player#{n}@example.com" }
+    password { "password123" }
+    sequence(:unique_id) { |n| "#{SecureRandom.alphanumeric(6).upcase}#{1000 + n}" }
+
+    trait :with_email do
+      sequence(:email) { |n| "player#{n}@mahjong.com" }
+    end
+
+    trait :without_email do
+      email { nil }
+    end
+
+    trait :with_password do
+      password { "password123" }
+    end
+
+    trait :without_password do
+      password { nil }
+    end
+
+    trait :guest do
+      email { nil }
+      password { nil }
+      sequence(:name) { |n| "ゲスト#{n}" }
+    end
+
+    factory :user_with_email, traits: [:with_email, :with_password]
+    factory :user_without_email, traits: [:without_email, :with_password]
+    factory :guest_user, traits: [:guest]
   end
 end

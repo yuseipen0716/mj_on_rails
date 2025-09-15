@@ -29,12 +29,34 @@
 #
 FactoryBot.define do
   factory :dora_indicator do
-    game { nil }
+    association :game
     player { nil }
-    tile { "MyString" }
+    tile { "5m" }
     position { 1 }
-    source { 1 }
-    turn_number { 1 }
-    action_sequence { 1 }
+    source { :initial }
+    turn_number { 0 }
+    action_sequence { 0 }
+
+    trait :initial_dora do
+      source { :initial }
+      position { 1 }
+      turn_number { 0 }
+    end
+
+    trait :kan_dora do
+      source { :kan }
+      position { 2 }
+      turn_number { 5 }
+      action_sequence { 3 }
+    end
+
+    trait :ura_dora do
+      source { :ura }
+      position { 1 }
+    end
+
+    factory :initial_dora_indicator, traits: [:initial_dora]
+    factory :kan_dora_indicator, traits: [:kan_dora]
+    factory :ura_dora_indicator, traits: [:ura_dora]
   end
 end
