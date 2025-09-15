@@ -48,12 +48,12 @@ FactoryBot.define do
 
     trait :pon do
       event_type { :pon }
-      data { { tiles: ["3s", "3s", "3s"], from_player: 1 }.to_json }
+      data { { tiles: [ "3s", "3s", "3s" ], from_player: 1 }.to_json }
     end
 
     trait :chi do
       event_type { :chi }
-      data { { tiles: ["1p", "2p", "3p"], from_player: 1 }.to_json }
+      data { { tiles: [ "1p", "2p", "3p" ], from_player: 1 }.to_json }
     end
 
     trait :ron do
@@ -66,11 +66,11 @@ FactoryBot.define do
       data { { winning_tile: "1m", han: 2, fu: 40, score: 2600 }.to_json }
     end
 
-    factory :draw_event, traits: [:draw_tile]
-    factory :discard_event, traits: [:discard_tile]
-    factory :pon_event, traits: [:pon]
-    factory :chi_event, traits: [:chi]
-    factory :ron_event, traits: [:ron]
-    factory :tsumo_event, traits: [:tsumo]
+    factory :draw_event, traits: [ :draw_tile ]
+    factory :discard_event, traits: [ :discard_tile ]
+    factory :pon_event, traits: [ :pon ]
+    factory :chi_event, traits: [ :chi ]
+    factory :ron_event, traits: [ :ron ]
+    factory :tsumo_event, traits: [ :tsumo ]
   end
 end

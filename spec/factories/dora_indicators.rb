@@ -55,8 +55,8 @@ FactoryBot.define do
       position { 1 }
     end
 
-    factory :initial_dora_indicator, traits: [:initial_dora]
-    factory :kan_dora_indicator, traits: [:kan_dora]
-    factory :ura_dora_indicator, traits: [:ura_dora]
+    factory :initial_dora_indicator, traits: [ :initial_dora ]
+    factory :kan_dora_indicator, traits: [ :kan_dora ]
+    factory :ura_dora_indicator, traits: [ :ura_dora ]
   end
 end

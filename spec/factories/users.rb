@@ -44,8 +44,8 @@ FactoryBot.define do
       sequence(:name) { |n| "ゲスト#{n}" }
     end
 
-    factory :user_with_email, traits: [:with_email, :with_password]
-    factory :user_without_email, traits: [:without_email, :with_password]
-    factory :guest_user, traits: [:guest]
+    factory :user_with_email, traits: [ :with_email, :with_password ]
+    factory :user_without_email, traits: [ :without_email, :with_password ]
+    factory :guest_user, traits: [ :guest ]
   end
 end

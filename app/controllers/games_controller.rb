@@ -1,5 +1,5 @@
 class GamesController < ApplicationController
-  before_action :require_login, only: [:index, :show, :create]
+  before_action :require_login, only: [ :index, :show, :create ]
 
   def index
     # ゲーム一覧・マッチング画面

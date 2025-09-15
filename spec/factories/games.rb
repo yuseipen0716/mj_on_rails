@@ -42,9 +42,9 @@ FactoryBot.define do
       current_player { 3 }
     end
 
-    factory :waiting_game, traits: [:waiting]
-    factory :playing_game, traits: [:playing]
-    factory :finished_game, traits: [:finished]
+    factory :waiting_game, traits: [ :waiting ]
+    factory :playing_game, traits: [ :playing ]
+    factory :finished_game, traits: [ :finished ]
   end
 
   def generate_mahjong_wall

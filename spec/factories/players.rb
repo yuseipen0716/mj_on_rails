@@ -53,10 +53,10 @@ FactoryBot.define do
       wind { :north }
     end
 
-    factory :east_player, traits: [:east_player]
-    factory :south_player, traits: [:south_player]
-    factory :west_player, traits: [:west_player]
-    factory :north_player, traits: [:north_player]
+    factory :east_player, traits: [ :east_player ]
+    factory :south_player, traits: [ :south_player ]
+    factory :west_player, traits: [ :west_player ]
+    factory :north_player, traits: [ :north_player ]
   end
 
   def generate_player_hand
