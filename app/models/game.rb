@@ -17,4 +17,14 @@
 #  index_games_on_status      (status)
 #
 class Game < ApplicationRecord
+  has_many :players, dependent: :destroy
+  has_many :users, through: :players
+  has_many :game_events, dependent: :destroy
+  has_many :dora_indicators, -> { order(:position) }, dependent: :destroy
+
+  enum status: {
+    waiting: 0,    # プレイヤー募集中
+    playing: 1,    # ゲーム進行中
+    finished: 2    # ゲーム終了
+  }
 end

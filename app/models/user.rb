@@ -14,4 +14,7 @@
 #  index_users_on_email  (email) UNIQUE
 #
 class User < ApplicationRecord
+  has_many :players, dependent: :destroy
+  has_many :games, through: :players
+  has_many :game_events, through: :players
 end
