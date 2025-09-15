@@ -28,7 +28,7 @@ class User < ApplicationRecord
   has_secure_password validations: false
   validates :password, length: { minimum: 6 }, if: -> { password.present? }
 
-  before_create :generate_unique_id
+  before_validation :generate_unique_id, on: :create
   before_create :set_default_name
 
   private
@@ -37,8 +37,11 @@ class User < ApplicationRecord
     return if unique_id.present?
 
     loop do
-      self.unique_id = generate_random_id
-      break unless User.exists?(unique_id: unique_id)
+      candidate = generate_random_id
+      unless User.exists?(unique_id: candidate)
+        self.unique_id = candidate
+        break
+      end
     end
   end
 
