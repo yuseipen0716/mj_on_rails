@@ -12,9 +12,9 @@ class CreateDoraIndicators < ActiveRecord::Migration[8.0]
       t.timestamps
     end
 
-    add_index :dora_indicators, [:game_id, :position], unique: true, comment: '1つのゲームで同じ位置のドラは1つのみ'
-    add_index :dora_indicators, [:game_id, :turn_number], comment: 'ゲーム内での巡数検索用'
+    add_index :dora_indicators, [ :game_id, :position ], unique: true, comment: '1つのゲームで同じ位置のドラは1つのみ'
+    add_index :dora_indicators, [ :game_id, :turn_number ], comment: 'ゲーム内での巡数検索用'
     add_index :dora_indicators, :source, comment: 'ドラの出現元での検索用'
-    add_index :dora_indicators, [:game_id, :created_at], comment: 'ゲーム内でのドラ出現順序検索用'
+    add_index :dora_indicators, [ :game_id, :created_at ], comment: 'ゲーム内でのドラ出現順序検索用'
   end
 end

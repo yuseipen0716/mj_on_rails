@@ -10,12 +10,12 @@ class CreateGameEvents < ActiveRecord::Migration[8.0]
 
       t.timestamps
     end
-    
+
     # インデックス
-    add_index :game_events, [:game_id, :created_at]
+    add_index :game_events, [ :game_id, :created_at ]
     add_index :game_events, :event_type
-    add_index :game_events, [:game_id, :event_type]
-    add_index :game_events, [:player_id, :event_type]
-    add_index :game_events, [:game_id, :turn_number]
+    add_index :game_events, [ :game_id, :event_type ]
+    add_index :game_events, [ :player_id, :event_type ]
+    add_index :game_events, [ :game_id, :turn_number ]
   end
 end

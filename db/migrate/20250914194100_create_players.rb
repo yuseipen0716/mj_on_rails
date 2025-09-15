@@ -12,9 +12,9 @@ class CreatePlayers < ActiveRecord::Migration[8.0]
     end
 
     # 1つのゲームで同じポジションに複数人座れない
-    add_index :players, [:game_id, :position], unique: true
+    add_index :players, [ :game_id, :position ], unique: true
     # 1人のユーザーが同じゲームに複数回参加できない
-    add_index :players, [:user_id, :game_id], unique: true
+    add_index :players, [ :user_id, :game_id ], unique: true
 
     add_check_constraint :players, 'position >= 0 AND position <= 3', name: 'valid_position'
     add_check_constraint :players, 'wind >= 0 AND wind <= 3', name: 'valid_wind'
