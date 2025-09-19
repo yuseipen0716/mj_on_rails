@@ -1,0 +1,16 @@
+<div class="top-page">
+  <h1>麻雀アプリ</h1>
+
+  <div class="main-actions">
+    <%= link_to 'あそぶ', play_path, class: 'btn btn-primary btn-lg' %>
+  </div>
+
+  <% if logged_in? %>
+    <div class="user-info">
+      <p>こんにちは、<%= current_user.name %>さん（ID: <%= current_user.unique_id %>）</p>
+      <%= link_to 'ログアウト', logout_path, data: { "turbo-method": :delete }, class: 'btn btn-sm btn-secondary' %>
+    </div>
+  <% end %>
+
+  <!-- その他、ルール説明、統計情報など -->
+</div>
