@@ -19,6 +19,9 @@
 - **Service層**: app/services/ でビジネスロジック
 - **Domain層**: app/lib/mahjong/ でドメインロジック
 
+### 開発時に実行するコマンド
+- `bin/rails xxx`などのコマンドを実行する場合は、`docker compose exec web bin/rails routes`などのように実行する必要があります。
+
 ## 麻雀ルール仕様
 
 ### 基本ルール
