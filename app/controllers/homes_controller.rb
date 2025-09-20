@@ -1,4 +1,6 @@
 class HomesController < ApplicationController
+  before_action :require_login, only: [:index]
+
   def index
     # トップページ用のデータがあれば取得（一旦まだ何も表示しない）
     # @total_games = Game.count
