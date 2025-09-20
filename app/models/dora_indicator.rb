@@ -31,7 +31,7 @@ class DoraIndicator < ApplicationRecord
   belongs_to :game
   belongs_to :player
 
-  enum source: {
+  enum :source, {
     initial: 0,  # 開始時のドラ
     minkan: 1,   # 明槓によるドラ
     ankan: 2,    # 暗槓によるドラ
