@@ -105,8 +105,8 @@ app/
 
 ### Phase 1: 牌システム（現在実装中）
 - [x] データベーススキーマ設計
-- [ ] 牌定義システム（`Mahjong::Tile::Definitions`）
-- [ ] 牌山生成・分割ロジック（`Mahjong::Tile::Generator`）
+- [x] 牌定義システム（`Mahjong::Tile::Definitions`）
+- [x] 牌山生成・分割ロジック（`Mahjong::Tile::Generator`）
 - [ ] 牌バリデーション（`Mahjong::Tile::Validator`）
 - [ ] 配牌システム（`Game::WallInitializer`）
 
@@ -164,6 +164,7 @@ app/
 - RSpec使用
 - モデル、サービス、ライブラリの単体テスト
 - 統合テスト（System Spec）でブラウザ操作確認
+- **RSpec記載規約**: contextやitは基本的に日本語で記載する（"it returns ok"のようにパッとわかるものは英語でも可）
 
 ## Claude Code利用時の指針
 
@@ -197,7 +198,7 @@ app/
 ## 現在の開発状況
 
 **進行中**: Phase 1の牌システム実装
-**次のタスク**: `Mahjong::Tile::Definitions`クラスの実装
-**課題**: annotate_rbの日本語コメント対応（英語コメント使用で回避）
+**次のタスク**: `Mahjong::Tile::Validator`クラスの実装
+**完了**: `Mahjong::Tile::Definitions`、`Mahjong::Tile::Generator`
 
 このガイドは開発進捗に応じて随時更新してください。
