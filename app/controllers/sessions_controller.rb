@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
       begin
         @user = User.create!(name: params[:name])
         session[:user_id] = @user.id
-        redirect_to play_path, notice: "ID「#{@user.unique_id}」を生成しました！次回はこのIDでログインしてください。"
+        redirect_to home_path, notice: "ID「#{@user.unique_id}」を生成しました！次回はこのIDでログインしてください。"
       rescue ActiveRecord::RecordInvalid => e
         redirect_to login_path, alert: "ユーザー作成に失敗しました: #{e.message}"
       end
@@ -18,7 +18,7 @@ class SessionsController < ApplicationController
       @user = User.find_by(unique_id: params[:unique_id])
       if @user
         session[:user_id] = @user.id
-        redirect_to play_path, notice: 'ログインしました'
+        redirect_to home_path, notice: 'ログインしました'
       else
         redirect_to login_path, alert: 'IDが見つかりません'
       end
@@ -27,6 +27,6 @@ class SessionsController < ApplicationController
 
   def destroy
     session[:user_id] = nil
-    redirect_to root_path, notice: 'ログアウトしました'
+    redirect_to login_path, notice: 'ログアウトしました'
   end
 end
