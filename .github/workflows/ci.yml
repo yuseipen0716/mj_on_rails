@@ -14,8 +14,11 @@ jobs:
       - name: docker compose up
         run: docker compose up -d
 
+      - name: Run migrations
+        run: docker compose exec -e RAILS_ENV=test -T web bin/rails db:migrate
+
       - name: Run RSpec
-        run: docker compose exec -T web bundle exec rspec
+        run: docker compose exec -e RAILS_ENV=test -T web bundle exec rspec
 
   rubocop:
     runs-on: ubuntu-latest
