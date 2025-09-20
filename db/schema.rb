@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_09_14_201948) do
+ActiveRecord::Schema[8.0].define(version: 2025_09_20_115244) do
   create_table "dora_indicators", force: :cascade do |t|
     t.integer "game_id", null: false
     t.integer "player_id"
@@ -52,9 +52,10 @@ ActiveRecord::Schema[8.0].define(version: 2025_09_14_201948) do
     t.integer "status", default: 0, null: false
     t.integer "turn", default: 0
     t.integer "current_player", default: 0
-    t.text "wall"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text "main_wall"
+    t.text "locked_wall"
     t.index ["created_at"], name: "index_games_on_created_at"
     t.index ["status"], name: "index_games_on_status"
   end

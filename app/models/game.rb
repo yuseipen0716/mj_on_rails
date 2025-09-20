@@ -7,7 +7,8 @@
 #  status         :integer          default(0), not null
 #  title          :string(100)      not null
 #  turn           :integer          default(0)
-#  wall           :text
+#  main_wall      :text             # 通常の山（最大122枚）
+#  locked_wall    :text             # 王牌（ドラ表示牌・嶺上牌など。14枚固定）
 #  created_at     :datetime         not null
 #  updated_at     :datetime         not null
 #
@@ -27,4 +28,7 @@ class Game < ApplicationRecord
     playing: 1,    # ゲーム進行中
     finished: 2    # ゲーム終了
   }
+
+  serialize :main_wall, Array
+  serialize :locked_wall, Array
 end
