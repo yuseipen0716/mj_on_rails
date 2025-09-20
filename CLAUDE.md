@@ -184,10 +184,6 @@ app/
 - 複雑な役（大三元、四暗刻など）は後回し
 - まずは基本的な1翻役から実装
 
-### 類似アプリケーション
-- 天鳳、雀魂などの既存オンライン麻雀を参考
-- ただし、シンプルな実装を心がける
-
 ### 技術的参考
 - Rails Guides: https://guides.rubyonrails.org/
 - Hotwire: https://hotwired.dev/
