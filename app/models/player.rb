@@ -30,17 +30,17 @@ class Player < ApplicationRecord
   has_many :game_events, dependent: :destroy
   has_many :dora_indicators, dependent: :nullify
 
-  enum position: {
+  enum :position, {
     east: 0,   # 東
     south: 1,  # 南
     west: 2,   # 西
     north: 3   # 北
   }
 
-  enum wind: {
+  enum :wind, {
     east: 0,   # 東
     south: 1,  # 南
     west: 2,   # 西
     north: 3   # 北
-  }
+  }, prefix: true
 end

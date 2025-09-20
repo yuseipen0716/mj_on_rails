@@ -19,6 +19,9 @@
 - **Service層**: app/services/ でビジネスロジック
 - **Domain層**: app/lib/mahjong/ でドメインロジック
 
+### 開発時に実行するコマンド
+- `bin/rails xxx`などのコマンドを実行する場合は、`docker compose exec web bin/rails routes`などのように実行する必要があります。
+
 ## 麻雀ルール仕様
 
 ### 基本ルール
@@ -183,10 +186,6 @@ app/
 - 基本的な麻雀ルールは一般的なものに準拠
 - 複雑な役（大三元、四暗刻など）は後回し
 - まずは基本的な1翻役から実装
-
-### 類似アプリケーション
-- 天鳳、雀魂などの既存オンライン麻雀を参考
-- ただし、シンプルな実装を心がける
 
 ### 技術的参考
 - Rails Guides: https://guides.rubyonrails.org/

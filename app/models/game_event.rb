@@ -31,7 +31,7 @@ class GameEvent < ApplicationRecord
   belongs_to :game
   belongs_to :player
 
-  enum event_type: {
+  enum :event_type, {
     # 基本アクション
     draw_tile: 0,      # ツモ
     discard_tile: 1,   # 打牌
