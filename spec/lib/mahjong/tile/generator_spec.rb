@@ -11,7 +11,7 @@ RSpec.describe Mahjong::Tile::Generator do
     end
 
     it '総牌数が山+王牌と等しい' do
-      expect(described_class::TOTAL_TILES).to eq(136)
+      expect(described_class::TOTAL_TILES_SIZE).to eq(136)
       expect(described_class::WALL_SIZE + described_class::WANPAI_SIZE).to eq(136)
     end
   end

@@ -3,7 +3,7 @@ module Mahjong
     class Generator
       WALL_SIZE = 122
       WANPAI_SIZE = 14
-      TOTAL_TILES = WALL_SIZE + WANPAI_SIZE
+      TOTAL_TILES_SIZE = WALL_SIZE + WANPAI_SIZE
 
       class << self
         def generate_wall_and_wanpai
@@ -75,7 +75,7 @@ module Mahjong
 
         def validate_full_set(tiles)
           return false unless tiles.is_a?(Array)
-          return false unless tiles.size == TOTAL_TILES
+          return false unless tiles.size == TOTAL_TILES_SIZE
 
           tile_counts = tiles.tally
           tile_counts == expected_tile_counts
