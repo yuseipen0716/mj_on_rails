@@ -12,8 +12,7 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   root 'homes#index'
 
-  # ゲーム関連
-  get 'play', to: 'games#index'  # 「あそぶ」ページ
+  get 'home', to: 'homes#show'  # ログイン後の「あそぶ」ページ
 
   # 認証関連
   get 'login', to: 'sessions#new'
@@ -23,5 +22,5 @@ Rails.application.routes.draw do
   # ユーザー作成（ID生成）
   post 'users', to: 'users#create'
 
-  resources :games, only: [ :show, :create ]
+  resources :games, only: [ :index, :show, :create ]
 end

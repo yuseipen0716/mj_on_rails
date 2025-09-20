@@ -1,14 +1,14 @@
 <div style="max-width: 600px; margin: 0 auto; padding: 40px 20px; text-align: center;">
-  <h1>新しいゲームを開始</h1>
+  <h1>ようこそ、<%= current_user.name %>さん！</h1>
   <p>プレイヤーID: <strong><%= current_user.unique_id %></strong></p>
 
   <div style="margin: 40px 0;">
-    <%= link_to 'コンピュータ対戦', games_path, 
+    <%= link_to '新しいゲームを開始', games_path, 
         style: 'display: inline-block; padding: 16px 32px; background-color: #007bff; color: white; text-decoration: none; border-radius: 6px; font-weight: bold; font-size: 18px;' %>
   </div>
 
   <div>
-    <%= link_to 'Home', home_path,
+    <%= link_to 'Top', root_path,
         style: 'display: inline-block; padding: 12px 24px; background-color: #6c757d; color: white; text-decoration: none; border-radius: 6px;' %>
   </div>
 </div>
