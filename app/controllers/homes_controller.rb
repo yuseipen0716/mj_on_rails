@@ -4,4 +4,8 @@ class HomesController < ApplicationController
     # @total_games = Game.count
     # @online_users = User.where('updated_at > ?', 5.minutes.ago).count
   end
+
+  def show
+    # ログイン後の画面（ようこそ）
+  end
 end
