@@ -28,5 +28,4 @@ class Game < ApplicationRecord
     playing: 1,    # ゲーム進行中
     finished: 2    # ゲーム終了
   }
-
 end
